@@ -1,6 +1,6 @@
 public class MaxPQ implements  PQInterface{
 
-    private Processor[] heap;
+    private Processor[] heap; //with start from position 1
     private int size;
 
     private  static final int DEFAULT_CAPACITY=5;
@@ -13,8 +13,11 @@ public class MaxPQ implements  PQInterface{
     }
 
 
-    
+
     private  void resize(){
+        Processor[] newHeap=new Processor[heap.length + AUTOGROW_SIZE];
+
+        for(int =0; )
     }
 
     public boolean isEmpty(){
@@ -26,7 +29,7 @@ public class MaxPQ implements  PQInterface{
     }
 
     public void insert(Processor x){//Inserts the Processor x in the heap
-            if(isEmpty()){
+            if(size== heap.length-1){
                 resize();
             }//Checks if there is available space ,if not it resizes the heap
 
@@ -53,8 +56,12 @@ public class MaxPQ implements  PQInterface{
 
         //compare parent child with parent i
         while(i!=1 && heap[i].compareTo(heap[parent])){
-
+            swap(i,parent);
+            i=parent;
+            parent=i/2;
         }
+
+
     }
 
     private void swap(int i,int j){
