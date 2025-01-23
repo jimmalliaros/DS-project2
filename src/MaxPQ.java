@@ -48,6 +48,21 @@ public class MaxPQ implements  PQInterface{
     }
 
     public Processor getmax(){
+            if(isEmpty()){
+                return null;
+            }
+
+            //We replace the root with the element with the smallest priority
+            Processor root=heap[1];
+            heap[1]=heap[size];
+            size--;
+
+            //We sink the new root element 
+            sink(1);
+
+            return root;
+
+
 
     }
 
