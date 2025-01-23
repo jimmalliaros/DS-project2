@@ -22,7 +22,7 @@ public class MaxPQ implements  PQInterface{
     }
 
     public int size(){
-
+        return size;
     }
 
     public void insert(Processor){
