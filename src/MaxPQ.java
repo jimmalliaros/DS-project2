@@ -38,8 +38,13 @@ public class MaxPQ implements  PQInterface{
             swim(size);//lets the newly added element swim
     }
 
+    //We get the item with maximum priority without removing it.
     public Processor max(){
+        if(isEmpty()){
+            return null;
+        }
 
+        return heap[1];
     }
 
     public Processor getmax(){
