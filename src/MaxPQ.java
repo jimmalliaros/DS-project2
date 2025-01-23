@@ -70,6 +70,36 @@ public class MaxPQ implements  PQInterface{
         heap[j]=temp;
     }//function that helps swap two elements
 
+    private void sink(int i){
+        int left=2*i;
+        int right=left+1; //we determine the children
 
+        if(left>size){
+            return;
+        }//if 2*i then the node is a leaf and we do nothing
+
+        while(left<=size){
+            int max=left;
+            if(right<=size){
+                if(heap[left].compareTo(heap[right])<0){
+                    max=right;//if the right child has bigger priority then
+                    //max is right
+                }
+
+            }
+            if(heap[i].compareTo(heap[i])>=0){
+                return;
+            }//if parent bigger than child then stop.Else swap the two elements
+
+            else{
+                swap(i,max);
+                i=max;
+                left=i*2;
+                right=left+1;
+            }
+
+
+        }
+    }
 
 }
