@@ -17,7 +17,11 @@ public class MaxPQ implements  PQInterface{
     private  void resize(){
         Processor[] newHeap=new Processor[heap.length + AUTOGROW_SIZE];
 
-        for(int =0; )
+        for(int i =1; i<=size; i++ ){
+			newHeap[i]=heap[i];
+		}
+		
+		heap=newHeap;
     }
 
     public boolean isEmpty(){
@@ -57,7 +61,7 @@ public class MaxPQ implements  PQInterface{
             heap[1]=heap[size];
             size--;
 
-            //We sink the new root element 
+            //We sink the new root element
             sink(1);
 
             return root;
@@ -75,7 +79,7 @@ public class MaxPQ implements  PQInterface{
         int parent=i/2;//finds the parent of the element
 
         //compare parent child with parent i
-        while(i!=1 && heap[i].compareTo(heap[parent])){
+        while(i!=1 && heap[i].compareTo(heap[parent])>0){
             swap(i,parent);
             i=parent;
             parent=i/2;

@@ -15,8 +15,8 @@ public class Job{
 
     double getTime(){return time;}//returning the value of the time
 
-    String toString(){
-        return "Id: "  + id.toString() + " time: " + time.toString();
+    public String toString(){
+        return "Id: "  + Integer.toString(id) + " time: " + Double.toString(time);
     }//returning the characteristics of the job
 
 

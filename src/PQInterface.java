@@ -1,4 +1,4 @@
-public interface PQInterface  PQInterface{
+public interface PQInterface  {
 
     public boolean isEmpty();//check if the queue is empty
 

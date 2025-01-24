@@ -3,11 +3,11 @@ import java.util.ArrayList;
 
 public class Processor implements Comparable<Processor>{
     private int id; // id of the Processor
-    private List processedJobs; // list of the jobs
+    private List<Job> processedJobs; // list of the jobs
 
     Processor(int id ){
         this.id=id;
-        processedJobs=new ArrayList<Job>;
+        processedJobs=new ArrayList<Job>();
     }//constructor
 
     void setId(int id){this.id=id;}//setting the id of the Processor
